@@ -1,0 +1,5 @@
+# Will my app break when a new browser comes out? #
+
+Generally, no.  GWT was designed in such a way to have all browser-specific code in user-level libraries. What's more, JavaScript itself has very consistent support across browsers, so when the GWT compiler performs its Java-to-JavaScript compilation, it doesn't need to worry about which browser the JavaScript is being generated for.
+
+That said, what makes compliance to newer browsers tricky is the DOM API. For backwards-compatible browsers, it just works. For other cases, it's straightforward to change the user-level libraries. All that's required is to implement a version of DOMImpl for the desired browser. In some cases an entirely new browser may require a bit more work to be supported by GWT, but this would be the exception rather than the rule.

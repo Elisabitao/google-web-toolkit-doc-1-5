@@ -1,0 +1,3 @@
+# What is GWT? #
+
+Google Web Toolkit (GWT) is an open source Java software development framework that makes writing AJAX applications easy. With GWT, you can develop and debug AJAX applications in the Java language using the Java development tools of your choice. When you deploy your application to production, the GWT compiler translates your Java application to browser-compliant JavaScript and HTML.

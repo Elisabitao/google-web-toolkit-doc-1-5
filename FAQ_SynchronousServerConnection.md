@@ -1,0 +1,5 @@
+# Why doesn't GWT provide a synchronous server connection option? #
+
+GWT's network operations are all asynchronous, or non-blocking.  That is, they return immediately as soon as called, and require the user to use a callback method to handle the results when they are eventually returned from the server.  Though in some cases asynchronous operators are less convenient to use than synchronous operators, GWT does not provide synchronous operators.
+
+The reason is that most browsers' JavaScript engines are single-threaded. As a result, blocking on a call to XMLHTTPRequest also blocks the UI thread, making the browser appear to freeze for the duration of the connection to the server.  Some browsers provide a way around this, but there is no universal solution.  GWT does not implement a synchronous network connection because to do so would be to introduce a feature that does not work on all browsers, violating GWT's commitment to no-compromise, cross-browser AJAX.  It would also introduce complexity for developers, who would have to maintain two different versions of their communications code in order to handle all browsers.
